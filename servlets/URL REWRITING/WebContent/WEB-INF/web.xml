@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <servlet>
+    <servlet-name>EmployeeSignupS1</servlet-name>
+    <servlet-class>session3.signup3.EmployeeSignupS1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSignupS1</servlet-name>
+    <url-pattern>/EmployeeSignupS1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLoginS1</servlet-name>
+    <servlet-class>session3.url1.EmployeeLoginS1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLoginS1</servlet-name>
+    <url-pattern>/EmployeeLoginS1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WelcomeS</servlet-name>
+    <servlet-class>session3.welcome1.WelcomeS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeS</servlet-name>
+    <url-pattern>/WelcomeS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>PasswordError</servlet-name>
+    <servlet-class>session3.password3.PasswordError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordError</servlet-name>
+    <url-pattern>/PasswordError</url-pattern>
+  </servlet-mapping>
+</web-app>

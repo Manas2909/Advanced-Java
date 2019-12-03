@@ -1,0 +1,19 @@
+2nd type of session management:
+HttpSession class:
+it is a predefined class in javax.servlet.http package and the object of the HttpSession class created represents the current ongoing session between the client and server.
+
+HttpSession hs=request.getSession(false);
+getSession(boolean flag) is a predefined non static member method of javax.servlet.HttpRequest class and it when we pass false as argument to request.getSession(),it will check whether there is already an existing object of the HttpSession class representing the current ongoing session between the http client i.e. browser and http server i.e. the website. Suppose there is already an existing object of the HttpSession class representing the current ongoing session then that already existing HttpSession class object is returned else it returns null value.
+
+
+HttpSession hs=request.getSession();
+getSession(boolean flag) is a predefined non static member method of javax.servlet.HttpRequest class and it when we pass no argument  to request.getSession(),it will check whether there is already an existing object of the HttpSession class representing the current ongoing session between the http client i.e. browser and http server i.e. the website. Suppose there is already an existing object of the HttpSession class representing the current ongoing session then that already existing HttpSession class object is returned else it will create a new HttpSession class object and return it.
+
+
+
+HttpSession hs=request.getSession(true);
+getSession(boolean flag) is a predefined non static member method of javax.servlet.HttpRequest class and it when we pass true argument  to request.getSession(),it will check whether there is already an existing object of the HttpSession class representing the current ongoing session between the http client i.e. browser and http server i.e. the website. Suppose there is already an existing object of the HttpSession class representing the current ongoing session then that already existing HttpSession class object is returned else it will create a new HttpSession class object and return it.
+
+We can store the client information in form of parameter name-value pairs to the HttpSession class object.
+
+

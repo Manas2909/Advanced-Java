@@ -1,0 +1,3 @@
+3. 3rd form of session management is url rewriting:
+This means that we will be passing the parameters to the servlet in the url which is directed towards the servlet.
+

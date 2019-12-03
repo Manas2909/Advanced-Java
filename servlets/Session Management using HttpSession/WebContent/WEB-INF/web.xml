@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>EmployeeSignupS1</servlet-name>
+    <servlet-class>session2.http2.EmployeeSignupS1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSignupS1</servlet-name>
+    <url-pattern>/EmployeeSignupS1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLoginS1</servlet-name>
+    <servlet-class>session2.http1.EmployeeLoginS1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLoginS1</servlet-name>
+    <url-pattern>/EmployeeLoginS1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WelcomeS</servlet-name>
+    <servlet-class>session3.http3.WelcomeS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeS</servlet-name>
+    <url-pattern>/WelcomeS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>PasswordError1</servlet-name>
+    <servlet-class>session4.http4.PasswordError1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordError1</servlet-name>
+    <url-pattern>/PasswordError1</url-pattern>
+  </servlet-mapping>
+</web-app>
