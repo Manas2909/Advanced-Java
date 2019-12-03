@@ -1,0 +1,22 @@
+/*
+Socket programming:
+To communicate between computers we need to connect them or attch them to a network. Ina network,the computers which send and receive data and provide services to the other computers are called as servers and the computers which send and receive data and receive services from the other computers i.e. from the servers are called as clients.
+
+The client can also act as a server in case the client provides services to other computers and sometimes the server can also act as client if the server recieves services from other computers.
+
+To communicate data between the computers on a network i.e. between the client and server we have standard communication protocol called as TCP/IP which consists of 5 layers: application layer, network layer, physical layer, internet layer and data layer.
+
+If we want a connection oriented and secure communication between the client and server we use the TCP i.e. the transmission control protocol between the client and server where the connection is first established between the client and server and then the data is sent between them.
+
+
+If we dont want a connection oriented and we want a connection less and unsecure but faster communication between the client and server we use the UDP i.e. the user datagram protocol between the client and server where the connection is not established between the client and server and the data is just sent without any security but so the communication of data is faster but data is sometimes lost.
+
+Every computer on a network including on the internet has a unique identification number associated with it called as ip address which is of 4 bytes and each byte is separate by a dot.
+
+To establish and communicate data between the 2 computers on a network each of the 2 computers must have a logical endpoint called socket associated with it. The socket is the combination of ip address and port number. In TCP protocol which is connection oriented and secure both the client and server sockets need to have the same port number.
+
+ In UDP protocol which is connection less and not secure both the client and server sockets neednot have the same port number.
+
+
+
+*/
