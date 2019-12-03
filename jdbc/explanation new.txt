@@ -1,0 +1,21 @@
+/*
+Transaction Management in jdbc:
+Transaction is a set of requests and responses sent between the client java pgm and the database. 
+Whenever any static or dyanamic sql query is sent from the client java pgm to the database, then whatever changes are made to or whatever is data is stored into the tables of the database using the query are automatically permanently reflected in the database by default. This is because of the auto update option of the database. 
+
+Suppose we want to disable the auto update option of the database, then we call the setAutoCommit() non static member method of the java.sql.Connection interface on the Connection interface implicit object and pass false as argument to it.
+
+And then after performing all the update,insert etc. operations on the database we call the commit() non static member method of the java.sql.Connection interface on the Connection interface implicit object to permanently reflect all the updations, insertions and deletions made to the tables in the database during that pgm execution. Till we call the commi() method of Connection interface, the updations are only temporarily reflected in database.
+
+
+
+
+Batch processing in jdbc:
+Till now, we sent the dyanamic or static insert/update/delete etc/ query one at a time to the database. Everytime an sql query is sent uto the database a lot of time is spent in accessing the database and then sending the query to it and then receiving the response from the database. So instead we can send the static or dyanamic sql update/insert/delete etc. queries in a group at the same time to the database so the pgm executin time is saved. This is called batch processing. 
+
+
+ResultSetMetaData and DatabaseMetaData:
+Both the above are predefined interfaces of the java.sql package. ResultSetMetaData interface is used to obtain information regarding the structure of a particular table in the database and DatabaseMetaData interface is used to obtain information regarding the structure of entire database.
+
+*/
+

@@ -1,0 +1,71 @@
+/*
+jdbc:
+it means java database connectivity. JDBC is an api i.e. a set of classes and interfaces of java.sql package, and it is used to create java applications to connect to the database and communicate data with the database.
+
+Before jdbc, every database had its own set of API. so to operate or access the database the user would need to learn the api for the database. So it was very difficult for user to operate on the database.
+
+Then Microsoft developed odbc api which is open database connectivity API. It is the api developed in the platform dependent C language. The odbc api was a common api to access any database in the world. But because the odbc api was developed in C language so it was platform dependent.
+
+So SUN Microsystems developed the jdbc api which is again a common api to access any database in world. But because the jdbc api was developed in java language, so it was platform independent.
+
+The jdbc driver is a logical layer between the jdbc pgm and the database. It converts the jdbc command into database command and vice versa. Technically it is a class which implements the java.sql.Driver interface of the jdbc api.
+
+There are 4 types of jdbc driver:
+1. jdbc odbc bridge driver:
+
+architecture:
+
+client pc					server pc
+						database
+
+java pgm
+
+type 1 driver
+
+odbc driver
+
+vendor database library
+
+
+
+vendor database library is a set of functions,operations, keywords etc. for the user of the database to perform transactions on database.
+
+odbc driver is the driver created as per odbc api. 
+
+The command from the java pgm is sent to jdbc type 1 driver and from there it is sent to odbc driver and from there to the vendor database library and from the vendor database library to the database on the server side. The response from the server is sent to client in reverse direction.
+
+So because the type 1 driver involves the odbc platform dependent driver, so the type 1 driver is also platform dependent. 
+
+The main advantage of the type 1 driver is that the type 1 driver class name is sun.jdbc.odbc.JdbcOdbcDriver where sun,jdbc and odbc are the packages present in the rt.jar file whch is automatically available after jdk is installed. So the name of the type 1 driver class i.e. JdbcOdbcDriver always remains same for any java pgm.  But from java 8 onwards there is no type 1 driver class available automatically with jdk. so we cannot use the type 1 driver class to establish connectivity using java applications developed in java 8 onwards.
+
+
+2. native api partly java driver(25% java driver)// not that    important 
+
+3. net protocol java driver(75% java driver)//not that important
+
+4. type 4 driver i.e. thin driver or fully java driver
+
+client pc					server pc
+						database
+
+java pgm
+
+type 4 driver
+
+
+
+The command from the java pgm is sent to database on server side through type 4 driver and from databe reply is sent back to client java pgm through type 4 driver. so type 4 driver is very fast unlike type 1 driver.
+
+Also the type 4 driver is developed fully in java and so it is platform independent.
+
+but the main disadvantage of the type 4 driver is that the type 4 driver class name is different for different databases because the type 4 driver class is available in a jar file which needs to be installed separately for that database. the jar file for mysql database is mysql connector.jar file and in that jar file for mysql database the type 4 driver class for mysql database is present i.e. com.mysql.jdbc.Driver where com,mysql and jdbc are packafges in mysql.connector.jar and the Driver is the name of the type 4 driver class for mysql database.
+
+ the jar file for oracle database is ojdbc14.jar file and in that jar file for oracle database the type 4 driver class for oracle database is present i.e. oracle.jdbc.driver.OracleDrive where oracle,jdbc and driver are packages ojdbc14.jar and the OracleDriver is the name of type 4 driver class for oracle database.
+
+
+but because the type 4 driver is platform independent and very fast so it is used for large scale applications and for web applications.
+
+
+
+
+*/

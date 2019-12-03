@@ -1,0 +1,3 @@
+Scrollable ResultSet:
+It is that ResultSet interface implicit object using which we can insert,update,deleta and modify data in the database.
+

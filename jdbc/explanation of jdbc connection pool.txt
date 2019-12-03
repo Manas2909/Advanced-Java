@@ -1,0 +1,22 @@
+/*
+connection pool in jdbc:
+In all the jdbc pgms we saw till now, we established the connection manually using the Class.forName() and DriverManager.getConnection().
+
+But the main disadvantage of these 2 steps is that everytime a long amount of time is taken to send the connection request to the database, establish and manage the connection with the database.
+
+So we have a new concept in java called connection pooling. In connection pooling, the web server or application server has a pool or group of jdbc logical connections i.e. has a pool of jdbc Connection interface implicit objects. There is also a connection pool manager which is used to maintain the pool of jdbc connection objects.
+
+The jdbc connection pool which is located on the web server or application server side, communicates with the database to create a connection interface object each time. So all the Connection interface implicit objects which are located in the jdbc cnnection pool on the applicatin or web server side are created because of the interaction of the connection pool manager with the database.
+
+The client jdbc java applicatin on the client side communicates with the jdbc connection pool manager using jdbc type 3 protocol. The jdbc connection pool manager communicates with the database using type 1/2/4 protocols and creates the Connection interface objects in the jdbc connection pool. 
+
+When the client java application wants to obtain a jdbc connection to the database on server side it will contact the connection pool on the server side using jdbc type 3 protocol. The connection pool manager will then check if there are any available logical Connection interface objects in the jdbc connection pool. If yes, the connection pool manager returns the implicit Connection interface object and that connectin interface object is used to establish the connection between the jdbc client java pgm and the database. 
+
+Then the jdbc client java pgm uses the Connection interface implicit object to create other jdbc objects like PreparedStatement, ResultSet etc. and then uses persistence logic to update, store, delete, insert, manage the data in the database using the Connection interface object. After the transactions are performed by the client jdbc java pgm, the client java pgm releases the connection using con.close() executed at the client side. After the connection is released by the jdbc client java pgm then the Connection interface implicit object used by the jdbc client java pgm is returned back to the web server or application server to the connection pool manager which will store the connection interface object back into the connection poolso that it can be used by same or different client jdbc pgm to establish the connection with the particular database.
+
+So in jdbc connection pool management, the job of establishing, managing and destroying the jdbc connection object is not with the client but is with the jdbc connection pool manager. Also jdbc connection pool helps to save the execution time of the jdbc java pgm by saving time needed to establish, manage and release the jdbc connection.
+
+Every database has a .dll file associated with it which contains logic to establish multiple connections to the same database and add them to the connection pool associated with the database.
+
+
+*/
