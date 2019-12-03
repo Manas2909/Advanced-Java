@@ -1,0 +1,43 @@
+<web-app>
+
+ <servlet>
+    <servlet-name>EmployeeSignupS2</servlet-name>
+    <servlet-class>cookie1.signup1.EmployeeSignupS2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSignupS2</servlet-name>
+    <url-pattern>/EmployeeSignupS2</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>EmployeeLoginS2</servlet-name>
+    <servlet-class>cookie1.login1.EmployeeLoginS2</servlet-class>
+  </servlet>
+   <servlet-mapping>
+       <servlet-name>EmployeeLoginS2</servlet-name>
+    <url-pattern>/EmployeeLoginS2</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>WelcomeS2</servlet-name>
+    <servlet-class>cookie1.welcome1.WelcomeS2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeS2</servlet-name>
+    <url-pattern>/WelcomeS2</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>PasswordError1</servlet-name>
+    <servlet-class>cookie1.error1.PasswordError1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordError1</servlet-name>
+    <url-pattern>/PasswordError1</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

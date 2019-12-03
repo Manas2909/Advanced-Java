@@ -1,0 +1,62 @@
+//create an employee website using servlets for login //and signup
+
+<form action="EmployeeSignupS" method="post">
+
+
+
+</form>
+
+the above form tag, means that after clicking on the submit button of the form tag, the data must be submitted to the servlet whose url pattern mentioned in the web.xml file is "EmployeeSignupS".
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="EmployeeSignupS" method="post">
+<b><font size="5">ENTER EMPLOYEE NAME:<input type="text" name="ename">
+
+above we have created a text field in the html page where the logical name assigned to the text field is ename. This means that after the data of the html page is submitted and sent to the servlet whose url pattern is EmployeeSignupS, to retreive the data typed by the user in the text field above on the form in the html page we will use the logical name "ename" in the servlet.
+
+
+<br>
+ENTER EMPLOYEE ID:<input type="text" name="eid">
+
+EMPLOYEE GENDER:<input type="radio" name="egender" value="male">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="egender" value="female">
+
+
+<br>
+
+ENTER EMPLOYEE ADDRESS
+<textarea rows="30" cols="50">
+
+	EMPLOYEE ADDRESS
+
+</textarea>
+
+<br>
+LANGUAGES SPOKEN:<input type="checkbox" name="elanguage" value="english">ENGLISH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="elanguage" value="hindi">HINDI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="elanguage" value="marathi">MARATHI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<br>
+
+ENTER EMPLOYEE EMAIL:<input type="text" name="email">
+
+<br>
+
+ENTER EMPLOYEE USERNAME:<input type="text" name="uname">
+<br>
+
+ENTER EMPLOYEE PASSWORD:<input type="password" name="epassword1">
+<br>
+CONFIRM EMPLOYEE PASSWORD:<input type="password" name="epassword2">
+
+<br>
+<input type="submit" value="SUBMIT">
+
+
+</form>
+</body>
+</html>

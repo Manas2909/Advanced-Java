@@ -1,0 +1,18 @@
+/*
+servlets:
+servlet is a web based application technology which is used to generate web based applications in java.The servlets are used to generate dyanamic web pages where the web pages are generated dyanamically by the web server everytime a new request arrives from the web client or browser. 
+
+The servlet api in java is stored in packages javax.servlet and javax.servlet.http. 
+In eclipse, a website or web application is equivalent to a dyanamic web project, so to create a new web application in eclipse, we need to go to File-> New -> Dyanamic Web Project.
+
+When we are creating servlet pgms in the dyanamic web project of eclipse, we will need to add the servlet-api.jar file to the CLASSPATH of the dyanamic web project.
+
+The web server we will generally use in eclipse to execute tghe servlet and html pgms of the dyanamic web project is apache tomcat server. The servlet-api.jar file is automatically present in the apache tomcat server.
+
+
+
+
+
+To generate a servlet 
+
+*/

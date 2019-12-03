@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>EmployeeSignupS</servlet-name>
+    <servlet-class>proj2.signup.EmployeeSignupS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSignupS</servlet-name>
+    <url-pattern>/EmployeeSignupS</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLoginS</servlet-name>
+    <servlet-class>proj2.login.EmployeeLoginS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLoginS</servlet-name>
+    <url-pattern>/EmployeeLoginS</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PasswordError</servlet-name>
+    <servlet-class>proj2.error1.PasswordError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordError</servlet-name>
+    <url-pattern>/PasswordError</url-pattern>
+  </servlet-mapping>
+</web-app>

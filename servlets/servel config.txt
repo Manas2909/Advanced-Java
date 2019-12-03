@@ -1,0 +1,117 @@
+/*
+passing parameters to servlet:
+If we want to pass local parameters only to a single servlet, then we will use the 
+<init-param> tag inside the <servlet> tag of that servlet to whom the local parameters must be passed.
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<servlet>
+
+<servlet-name>Serv1</servlet-name>
+<servlet-class>pack1.proj3.Serv1</servlet-class>
+
+<init-param>
+<param-name>employee_name</param-name>
+<param-value>abc def</param-value>
+</init-param>
+
+<init-param>
+<param-name>employee_id</param-name>
+<param-value>5</param-value>
+</init-param>
+
+
+<init-param>
+<param-name>employee_salary</param-name>
+<param-value>50000</param-value>
+</init-param>
+
+</servlet>
+
+
+
+<servlet-mapping>
+
+<servlet-name>Serv1</servlet-name>
+<url-pattern>/Serv1</url-pattern>
+
+
+</servlet-mapping>
+
+
+</web-app>
+
+in above web.xml file, we have mentioned 3 parameters to be passed to the servlet whose servlet name is Serv1 and whose servlet class name is pack1.proj3.Serv1. These parameters must be mentioned inside the 3 <init-param> tags resp. and in the <servlet> tag of the servlet whose logical name is Serv1 in the web.xml.
+
+
+
+passing global parameters to servlet:
+If we want to pass global parameters only to a single servlet, then we will use the 
+<context-param> tag inside the <web-app> but outside the all the <servlet> tags of all the servlets configured in that web.xml file.
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<context-param>
+<param-name>employee_name</param-name>
+<param-value>abc def</param-value>
+</context-param>
+
+<context-param>
+<param-name>employee_id</param-name>
+<param-value>5</param-value>
+</context-param>
+
+
+<context-param>
+<param-name>employee_salary</param-name>
+<param-value>50000</param-value>
+</context-param>
+
+
+<servlet>
+
+<servlet-name>Serv1</servlet-name>
+<servlet-class>pack1.proj3.Serv1</servlet-class>
+
+</servlet>
+
+
+
+<servlet-mapping>
+
+<servlet-name>Serv1</servlet-name>
+<url-pattern>/Serv1</url-pattern>
+
+
+</servlet-mapping>
+
+<servlet>
+
+<servlet-name>Serv2</servlet-name>
+<servlet-class>pack1.proj3.Serv2</servlet-class>
+
+</servlet>
+
+
+
+<servlet-mapping>
+
+<servlet-name>Serv2</servlet-name>
+<url-pattern>/Serv2</url-pattern>
+
+
+</servlet-mapping>
+
+
+</web-app>
+
+in above web.xml file, we have mentioned 3 global parameters to be passed to all the servlets whose servlet names are Serv1 and Serv2 resp. and whose servlet class names are pack1.proj3.Serv1 and ..... These parameters must be mentioned inside the 3 <context-param> tags resp. and in the <web-app> tag but outside  of all the <servlet> tags of all servlets configured in that web.xml file.
+
+
+*/
+

@@ -1,0 +1,4 @@
+servlet filter:
+servlet filter is a servlet which restricts or allows access to a particular servlet.
+
+It can act as a firewall for providing security to servlet.

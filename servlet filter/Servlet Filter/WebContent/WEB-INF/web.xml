@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>EmployeeSignupS</servlet-name>
+    <servlet-class>filter3.EmployeeSignupS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeSignupS</servlet-name>
+    <url-pattern>/EmployeeSignupS</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLoginS</servlet-name>
+    <servlet-class>filter1.EmployeeLoginS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLoginS</servlet-name>
+    <url-pattern>/EmployeeLoginS</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>WelcomeS</servlet-name>
+    <servlet-class>filter4.WelcomeS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeS</servlet-name>
+    <url-pattern>/WelcomeS</url-pattern>
+  </servlet-mapping>
+  
+  
+  <filter>
+    <filter-name>EmployeeFilterS</filter-name>
+    <filter-class>filter2.EmployeeFilterS</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>EmployeeFilterS</filter-name>
+    <url-pattern>/EmployeeLoginS</url-pattern>
+  </filter-mapping>
+  
+  
+</web-app>

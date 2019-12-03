@@ -1,0 +1,47 @@
+Scripting tags of jsp:
+
+1. scriptlet tag:
+
+it is represented by:
+
+<%
+
+
+%>
+
+we write the java code in the scriptlet tag and the code written in the scriptlet tag is provided by JSP container as the body of the _jspService() method of the jsp equivalent servlet after the jsp pgm is translated into the corr. servlet pgm.
+
+We can use the implicit objects of jsp in the scriptlet tag.
+
+The jsp container provides 9 implicit objects which can be used in a jsp page where the implicit objects are represented by keywords and so there is no need for the programmer to separatelt write code to create instance of these implicit objects.
+
+The 9 implicit objects of jsp are:
+request,response,out(like the PrintWriter object of servlet to write data into the response of servlet),application,page,pageContext,session,exception,config.
+
+Whatever variables we declare in the scriptlet tag are autonmatically provided as local variables of the _jspService() method of the jsp equiovalent servlet pgm after the translation phase.
+
+
+
+2. expression tag:
+
+it is represented by:
+
+<%=
+
+
+%>
+
+whatever we write inside the expression tag of the jsp page is automatically provided by the jsp container as argument to out.println() which writes the data to the response of the jsp container. So we can use the 9 implicit objects of jsp also in the expression tag because whatever we write in thee xpression tag is automatically provided by JSP container as argument to out.println() and this out.println() is sent to the body of the _jspService() method in the jsp equivalent servlet pgm after the translation phase. 
+
+
+
+3. declaration tag:
+
+it is represented by
+
+<%!
+
+
+%>
+
+we generally declare variables and define functions or methods in the declaration tag of the jsp page and these variables and methods defined in the declaration tag are automatically provided by the jsp container as instance variables and instance member methods of the jsp equivalent servlet class after the translation phase. So we cannot use the 9 implicit objects of jsp in the declaration tag. Also we can override the jspInit() and jspDestroy() methods in the declaration tag but not the _jspService() method.

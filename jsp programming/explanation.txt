@@ -1,0 +1,36 @@
+jsp:
+java server pages:
+disadvantages of servlets:
+1. in servlets, the html designer cannot design the web pages and this job must be done by the java programmer only.
+
+2. in servlets, the presentation logic i.e. html code is mixed with the business logic i.e. java code. So code complexity is more.
+
+3. using servlets we have write a web.xml file which contains the configuration information for every servlet created in that java application. And every servlet created in the java application must have an entry created for it in the web.xml file. So the time taken to load the servlet for a particular request and then process that request using the servlet is more because the mapping of the request to the servlet is done by the servlet container in the web server by searching for the entry of the servlet in the web.xml file.
+
+4. Also every time changes are made to the source code of the servlet,we need to recompile the servlet.
+
+
+Web development using jsp is done using tag based programming. A jsp page contains jsp tags along with html tag. The jsp tags in a jsp page, are used to specify the java code which are used to develop dyanamic content and the html tags in a jsp page are used to create static content.
+
+Using jsp, we write the business logic i.e. the data processing and data manegemnt using jdbc and java code inside a special type of java pgm called as java bean class and the presentation logic is written inside a jsp page. So because we follow the MVC i.e. Model(java bean class) View(jsp or html page) Controller(servlet or servlet filter) architecture the web development using jsp is easy,convenient, make the web application flexible to add or remove web components and makes the web application reusable and also the web development costs are reduced.
+
+
+Whenever changes are made to the jsp pgm code, we donot need to recompile the jsp page. 
+
+Also we dont need to configure the jsp pages created in a web application inside a web.xml file.
+
+
+
+Life cycle of jsp:
+1. The jsp page is first depolyed and this is called pre compilation phase.
+
+2. Translation phase: when a client or browser request arrives at the web server i.e. apache tomcat or web logic for a jsp page, then the web server will first locate the jsp page. Then the jsp container i.e. part of the web server which manages and executes the jsp page, will check whether there are any compiler errors in the jsp page i.e. in the java code written in the jsp page. If yes then the jsp container which is represented using the jasper.jsp file in the location where tomcat is installed, then the jsp container gives an exception. If there are no syntax errors in the java code written inside the jsp page, then the jsp container will convert the jsp page into corresponding java pgm i.e. corresponding servlet pgm. The corresponding servlet .class file generated during jsp translation phase is ether the subclass of the javax.servlet.jsp.JspPage class or the javax.servlet.jsp.HttpJspPage interface depending on which server we have used.
+
+3. When a client request arrives for the jsp page and after it is translated i.e. converted into corr. servlet java pgm, then the corr. .class file of the corr. servlet pgm is initialised by calling the init(ServletConfic sc) method of the equivalent servlet pgm which in turn calls the jspInit() method which initialises the corresponding servlet pgm which is equivalent to the jsp page. Then the .class file of the equivalent servlet pgm is instantiated i.e. its object is created and for every new client request from then on arriving for the same jsp page a different new thread of the same equivalent servlet pgm instance is created to process the request.
+
+4. During request processing phase, the jsp container calls the service(HttpServletRequest req, HttpServletResponse res) method on the equivalent servlet thread which in turn calls the _jspService() method to process the client request. The _ symbol is mentioned before the jspService() method name, because the _jspService() method cannot be overridden in our corresponding jsp pgm, but the jspInit() and jspDestroy() methods can be overridden by the corr. jsp pgm. 
+
+5. After the response is sent by that servlet thread to the client then that thread of the servlet is destroyed by the jsp container invoking the destroy() method on the equivalent servlet pgm which in turn invokes the jspDestroy() method of the jsp page.
+
+
+

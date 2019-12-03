@@ -1,0 +1,55 @@
+write servlet to send the server date and server time back to the client
+
+
+To create your own servlet java pgm in the dyanamic web project, right click on dyanamic web project -> New -> Servlet
+
+in the servlet java pgm define a public class which will either implement the javax.servlet.Servlet interface and implement the 5 abstract member methods of Servlet interface i.e. public void init(ServletConfig sc), public void destroy(), public String getServletInfo(), public ServletConfig getServletConfig(), public void service(ServletRequest req, ServletResponse res) where all these 5 methods will be automatically called by the web server or http server e.g. apache tomcat for performing the life cycle of the servlet.
+
+or to generate your own servlet we can also make the public class in the servlet pgm extend the javax.servlet.ApplicationServlet class which is actually the subclass of the javax.servlet.Servlet interface. When we extend the ApplicationServlet class we must override the public void service(ServletRequest req, ServletResponse res) method of the ApplicationServlet class.
+
+but the most common way of generating your own servlet pgm is to define the public class which will be the subclass of the javax.servlet.http.HttpServlet class which is actually the subclass of javax.servlet.ApplicationServlet class and when we extend the HttpServlet class we will need to override the public void doGet(HttpServletRequest req, HttpServletResponse res) member method or public void doPost(HttpServletRequest req, HttpServletResponse res) member method of HttpServlet class and write the code for processing the client request and generating the client response inside the body of the overriding doGet() or overriding doPost() method.
+
+Generally, unless specified, we will override both the doGet() and doPost() member methods of HttpServlet class but write our request processing and response generating logic code inside body of the doPost() method and call the doPost() method inside body of doGet() method. This is because the doPost() method is always much more efficient than the doGet() method for processing client or browser request and generating the client response.
+
+Suppose we have mentioned in the html page that the request type is of the POST type, then we will need to override only the doPost() method of the HttpServlet superclass inside the servlet java pgm.
+
+HttpServletRequest and HttpServletResponse are predefined classes in javax.servlet.http package and they are the subclasses of the javax.servlet.ServletRequest and javax.servlet.ServletResponse classes resp.
+
+
+
+After creating the dyanamic web project and all the servlet pgms inside it, before running the dyanamic web project we will need to configure all servlet java pgms inside the web.xml file. The web.xml file must be created inside the web-inf subfolder of the web-content subfolder of the dyanamic web project.
+
+The web.xml file contains 2 entries for every servlet pgm created in the dyanamic web project.
+
+The web.xml file is used to map the client or browser request sent to the web application to the actual servlet java pgm in that web application.
+
+
+
+e.g. suppose we have created a servlet named Servlet1.java inside the package proj1.serv1 of the dyanamic web project then the web.xml entry for the Servlet1.java servlet will look like:
+
+<web-inf>
+
+<servlet>
+
+<servlet-name>Servlet1</servlet-name>
+<servlet-class>proj1.serv1.Servlet1</servlet-class>
+
+</servlet>
+
+
+
+<servlet-mapping>
+
+<servlet-name>Servlet1</servlet-name>
+<url-pattern>/Servlet1</url-pattern>
+
+</servlet-mapping>
+
+
+</web-inf>
+
+the <web-inf> entry in the web.xml file represents the dyanamic web project. 
+
+When the client request arrives to the dyanamic web project for the Servlet1.java servlet inside it, then the web server will first receive the client request and load the web.xml of the dyanamic web project. Inside the web.xml file of the dyanamic web project, the web server will first obtain the request URL from the client request which contains the url-pattern of the destination servlet. Then the web server will scan the entire web.xml file to locate the <servlet-mapping> tag of the servlet whose <url- pattern> subtag value matches with the value of the url-pattern in the request url of the client request which in this case is \Servlet1. When that <url-pattern> sub tag is obtained then the web server will obtain the corresponding logical name of the servlet as mentioned in the value of the <servlet-name> sub tag inside that <servlet-mapping> main tag of the servlet where the value of the <servlet-name> main tag in this case is Servlet1. Then the web server will go to the <servlet> main tag in the web.xml for that servlet and it will scan the entire web.xml file again to locate the <servlet> main tag of the servlet whose <servlet-name> value is Servlet1, and once it finds such a <servlet> main tag, then from that it will obtain the value of the <servlet-class> sub tag which in this case is proj1.serv1.Servlet1 and it will load a single instance of that servlet class in RAM memory and will create a separate thread for each of the client requests directed towards that servlet whose servlet class name is proj1.serv1.Servlet1.
+
+To execute the dyanamic web project, right click inside the window of any of the web resource pgms i.e. any servlet or html or jsp pgm in the dyanamic web project and then Run As-> Run on Server. When we are executing the web server for the 1st time in the workspace we will need to map the server installed path with the path of the workspace and after that we can directly run any dyanamic web project in that workspace by just right clicking in the window of any servlet or jsp or html pgm in that dyanamic web project and then Run As-> run on server.
